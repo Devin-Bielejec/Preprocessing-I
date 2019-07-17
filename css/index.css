@@ -1,97 +1,46 @@
 html {
-  height: 100%;
   font-size: 62.5%;
 }
-/* Set every element's box-sizing to border-box */
-* {
-  box-sizing: border-box;
-}
-/* variables */
-/* variables */
-/* Mix ins */
 body {
-  line-height: 1;
-  padding: 1%;
-  background: white;
-  margin: 2% 15%;
+  margin: 2% 25%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Squada One', cursive;
-  color: black;
-}
-p,
-li,
-th,
-td,
-tr {
-  font-family: 'DM Serif Display', serif;
+p {
   font-size: 1.5rem;
-  color: darkblue;
 }
+/* Variables */
+/* Mixins */
+/* For the purpose of this projec, let's mirror the html */
 nav {
   display: flex;
   justify-content: flex-end;
-  background-color: white;
-  padding: 1%;
+  margin: 1% 0%;
 }
 nav a {
   width: 15%;
+  font-size: 2rem;
   text-decoration: none;
-  font-size: 3rem;
 }
 .intro {
-  padding: 2%;
   display: flex;
-  align-items: flex-start;
-  background: lightgrey;
-}
-.intro .right {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-}
-.intro .right button {
-  width: 20%;
-  height: auto;
 }
 .intro img {
   width: 40%;
-  border-radius: 5%;
+  height: auto;
+  margin: 2% 0;
 }
-.intro p {
-  width: 40%;
-  padding: 5% 0%;
-  font-size: 1.5rem;
-}
-.topcontent {
+.intro div.right {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
 }
-.topcontent section {
-  width: 40%;
-  padding: 2%;
-}
-.workhistory table {
-  width: 50%;
-  border-collapse: collapse;
-  border: 2px solid black;
-}
-.workhistory table tr:nth-child(even) {
-  border: 1px solid grey;
-  background: grey;
-}
-.workhistory table tr:nth-child(even) td,
-.workhistory table tr:nth-child(even) th {
-  border: 1px solid black;
-  text-align: left;
-  padding: 0.5%;
-}
-footer {
-  margin: 2% 0%;
+@media (max-width: 500px) {
+  .intro div.right {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .intro div.right img {
+    width: 60%;
+    height: auto;
+  }
 }
