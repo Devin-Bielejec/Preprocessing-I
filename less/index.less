@@ -1,8 +1,11 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* variables */
+@navBackground: skyblue;
+@headingSize: 2rem;
+@headingColor: red;
+@textSize: 1rem;
+@textColor: blue;
+@bodyWidth: 100%;
+/* variables */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -29,8 +32,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+
 body {
 	line-height: 1;
+	padding: 1%;
+	background: lightgrey;
+	width: @bodyWidth;
 }
 ol, ul {
 	list-style: none;
@@ -50,10 +58,59 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Squada One', cursive;
+	font-size: @headingSize;
+	color: @headingColor;
+}
+
+p, li, th, td, tr{
+	font-family: 'DM Serif Display', serif;	
+	font-size: @textSize;
+	color: @textColor;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+nav{
+	display: flex;
+	justify-content: flex-end;
+	background-color: @navBackground;
+	padding: 1%;
+	a{
+		width: 10%;
+		text-decoration: none;
+	}
+}
+
+.intro{
+	padding: 0;
+	display: flex;
+	align-items: space-between;
+
+	img{
+		width: 50%;
+	}
+}
+
+main{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	section{
+		width: @bodyWidth/2 - .10*@bodyWidth;
+	}
+}
