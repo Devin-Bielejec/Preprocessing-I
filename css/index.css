@@ -1,5 +1,3 @@
-/* variables */
-/* variables */
 html,
 body,
 div,
@@ -102,12 +100,6 @@ nav,
 section {
   display: block;
 }
-body {
-  line-height: 1;
-  padding: 1%;
-  background: lightgrey;
-  width: 100%;
-}
 ol,
 ul {
   list-style: none;
@@ -131,6 +123,15 @@ table {
 * {
   box-sizing: border-box;
 }
+/* variables */
+/* variables */
+/* Mix ins */
+body {
+  line-height: 1;
+  padding: 1%;
+  background: white;
+  margin: 5% 10%;
+}
 h1,
 h2,
 h3,
@@ -138,8 +139,7 @@ h4,
 h5,
 h6 {
   font-family: 'Squada One', cursive;
-  font-size: 2rem;
-  color: red;
+  color: black;
 }
 p,
 li,
@@ -148,16 +148,15 @@ td,
 tr {
   font-family: 'DM Serif Display', serif;
   font-size: 1rem;
-  color: blue;
+  color: darkblue;
 }
-html,
-body {
+html {
   height: 100%;
 }
 nav {
   display: flex;
   justify-content: flex-end;
-  background-color: skyblue;
+  background-color: white;
   padding: 1%;
 }
 nav a {
@@ -165,18 +164,41 @@ nav a {
   text-decoration: none;
 }
 .intro {
-  padding: 0;
+  padding: 2%;
   display: flex;
-  align-items: space-between;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  background: lightgrey;
 }
 .intro img {
-  width: 50%;
+  width: 40%;
+  border-radius: 5%;
 }
-main {
+.intro p {
+  width: 40%;
+  padding: 5% 0%;
+}
+.topcontent {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
 }
-main section {
+.topcontent section {
   width: 40%;
+  padding: 2%;
+}
+.workhistory table {
+  width: 50%;
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+.workhistory table tr:nth-child(even) {
+  border: 1px solid grey;
+  background: grey;
+}
+.workhistory table tr:nth-child(even) td,
+.workhistory table tr:nth-child(even) th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 0.5%;
 }

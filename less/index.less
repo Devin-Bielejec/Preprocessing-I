@@ -1,12 +1,3 @@
-/* variables */
-@navBackground: skyblue;
-@headingSize: 2rem;
-@headingColor: red;
-@textSize: 1rem;
-@textColor: blue;
-@bodyWidth: 100%;
-/* variables */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -33,19 +24,13 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-
-body {
-	line-height: 1;
-	padding: 1%;
-	background: lightgrey;
-	width: @bodyWidth;
-}
 ol, ul {
 	list-style: none;
 }
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
@@ -61,16 +46,40 @@ table {
 	box-sizing: border-box;
 }
 
+/* variables */
+@navBackground: white;
+@headingSize: 2rem;
+@headingColor: black;
+@textSize: 1rem;
+@textColor: darkblue;
+@bodyMargin: 5% 10%;
+/* variables */
+
+/* Mix ins */
+.introStuff(){
+	padding: 2%;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: flex-start;
+	background: lightgrey;
+}
+
+.bodyStuff(){
+	line-height: 1;
+	padding: 1%;
+	background: white;
+	margin: @bodyMargin;
+}
 
 
-
-
+body{
+	.bodyStuff();
+}
 
 
 
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Squada One', cursive;
-	font-size: @headingSize;
 	color: @headingColor;
 }
 
@@ -80,9 +89,10 @@ p, li, th, td, tr{
 	color: @textColor;
 }
 
-html, body {
+html {
 	height: 100%;
 }
+
 
 nav{
 	display: flex;
@@ -96,21 +106,43 @@ nav{
 }
 
 .intro{
-	padding: 0;
-	display: flex;
-	align-items: space-between;
+	.introStuff();
 
 	img{
-		width: 50%;
+		width: 40%;
+		border-radius: 5%
+	}
+
+	p{
+		width: 40%;
+		padding: 5% 0%;
 	}
 }
 
-main{
+.topcontent{
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap;
 	justify-content: space-between;
 
 	section{
-		width: @bodyWidth/2 - .10*@bodyWidth;
+		width: 40%;
+		padding: 2%;
+	}
+}
+
+.workhistory{
+	table{
+		width: 50%;
+		border-collapse: collapse;
+		border: 2px solid black;
+		tr:nth-child(even){
+			border: 1px solid grey;
+			background: grey;
+			td, th{
+				border:1px solid black;
+				text-align: left;
+				padding: .5%;
+			}
+		}
 	}
 }
