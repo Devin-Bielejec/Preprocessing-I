@@ -41,6 +41,11 @@ table {
 	border-spacing: 0;
 }
 
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
 /* Set every element's box-sizing to border-box */
 * {
 	box-sizing: border-box;
@@ -48,11 +53,11 @@ table {
 
 /* variables */
 @navBackground: white;
-@headingSize: 2rem;
+@headingSize: 4rem;
 @headingColor: black;
-@textSize: 1rem;
+@textSize: 2rem;
 @textColor: darkblue;
-@bodyMargin: 5% 10%;
+@bodyMargin: 2% 40%;
 /* variables */
 
 /* Mix ins */
@@ -81,6 +86,7 @@ body{
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Squada One', cursive;
 	color: @headingColor;
+	text-size: 
 }
 
 p, li, th, td, tr{
@@ -89,9 +95,6 @@ p, li, th, td, tr{
 	color: @textColor;
 }
 
-html {
-	height: 100%;
-}
 
 
 nav{
@@ -145,4 +148,8 @@ nav{
 			}
 		}
 	}
+}
+
+footer{
+	margin: 2% 0%;
 }
