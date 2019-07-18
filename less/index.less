@@ -1,67 +1,130 @@
-html{
-	font-size: 62.5%
+// Is this working?
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-body{
-	margin: 2% 25%;
-}
-
-p{
-	font-size: 1.5rem;
-}
-/* Variables */
-@textColor: blue;
-
-/* Mixins */
-
-
-/* For the purpose of this projec, let's mirror the html */
-
-nav{
+.flexIt(){
 	display: flex;
-	justify-content: flex-end;
-	margin: 1% 0%;
+}
+.paddingGeneral(){
+	padding: 1% 2%;
+}
 
-	a{
-		width: 15%;
-		font-size: 2rem;
-		text-decoration: none;
+@fontColor: red;
+@fontStyle:"Courier New";
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	margin: 2% 15%;
+	color: @fontColor;
+	font-family: @fontStyle;
+}
+
+header{
+	nav{
+		.flexIt();
 	}
-
-}//same as mobile
+}
 
 
 .intro{
 	display: flex;
-	
+	flex-flow: row nowrap;
+	justify-content: space-between;
 	img{
-		width: 40%;
+		width: 35%;
 		height: auto;
-		margin: 2% 0;
+		.paddingGeneral();
 	}
 
 	div.right{
-		display: flex;
+		width: 35%;
+		.flexIt();
 		flex-flow: column wrap;
-		align-items: center;
-		justify-content: center;
-
-		button{
-
-		}
-	
-	@media (max-width: 500px){
-		display: flex;
-		flex-flow: row wrap;
-
-		img{
-			width: 60%;
-			height: auto;
-		}
-
-		}
-
-
+		justify-content: space-between;
+		.paddingGeneral();
 	}
 
+	@media (max-width: 500px){
+		.flexIt();
+		flex-flow: row wrap;
+		justify-content: space-between;
+
+		img{
+			display: none;
+		}
+
+		div.right{
+			width: 100%;
+			.flexIt();
+			flex-flow: column wrap;
+			justify-content: space-between;
+			.paddingGeneral();
+		}
+	}
 }
+
+
+main{
+	section{
+		.paddingGeneral();
+	}
+
+	h1, h2, h3, h4, h5, h6{
+		color: black;
+	}
+
+
+}
+
+
